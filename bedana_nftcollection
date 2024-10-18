@@ -1,0 +1,46 @@
+// Variable to hold your NFTs.
+let nftCollection = [];
+
+
+function mintNFT(name, eyeColor, shirtType, bling) {
+    // Create an NFT object with metadata
+    const nft = {
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling
+    };
+    
+    
+    nftCollection.push(nft);
+    console.log(`Minted NFT: ${name}`);
+}
+
+
+function listNFTs() {
+    for (let i = 0; i < nftCollection.length; i++) {
+        console.log(`NFT ${i + 1}:`);
+        console.log(`  Name: ${nftCollection[i].name}`);
+        console.log(`  Eye Color: ${nftCollection[i].eyeColor}`);
+        console.log(`  Shirt Type: ${nftCollection[i].shirtType}`);
+        console.log(`  Bling: ${nftCollection[i].bling}`);
+        console.log('-------------------');
+    }
+}
+
+
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Call Functions
+
+mintNFT("Pink Panther", "Yellow", "Space suit", "Gold Chain");
+mintNFT("Meilin Panda", "Gray", "Leather Jacket", "Diamond Ring");
+mintNFT("Glacier", "Blue", "Hoodie", "Katana");
+mintNFT("SpaceExplorer", "Purple", "Space Suit", "Jetpack");
+
+console.log("\nList of all NFTs:");
+listNFTs();
+
+console.log("\nTotal Supply of NFTs: " + getTotalSupply());
